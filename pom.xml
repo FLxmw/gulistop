@@ -13,6 +13,8 @@
         <module>gulimall-product</module>
         <module>gulimall-ware</module>
         <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>gulimall-common</module>
     </modules>
     <name>gulimall</name>
     <description>聚合服务</description>
@@ -20,5 +22,6 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
+
 
 </project>
