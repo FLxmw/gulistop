@@ -1,16 +1,22 @@
 server:
   port: 11000
 
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.115.91.98:3306/gulimall-wms
-    username: root
-    password: root
-
-mybatis-plus:
-  mapper-locations: classpath:/mapper/**/*.xml
-#  主键自增
-  global-config:
-    db-config:
-      id-type: auto
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://47.115.91.98:3306/gulimall-wms
+#    username: root
+#    password: root
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:8848
+#  application:
+#    name: gulimall-ware
+#
+#mybatis-plus:
+#  mapper-locations: classpath:/mapper/**/*.xml
+##  主键自增
+#  global-config:
+#    db-config:
+#      id-type: auto

@@ -1,20 +1,17 @@
-package com.feilong.gulimall.product;
+package com.feilong.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-/**
- * @author FeiLong
- * @version 1.8
- * @date 2020/11/15 12:47
- */
-@SpringBootApplication
 @SuppressWarnings("ALL")
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableDiscoveryClient
-public class GulimallProductApplication {
+public class GatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GulimallProductApplication.class, args);
+        SpringApplication.run(GatewayApplication.class, args);
     }
+
 }
