@@ -4,7 +4,7 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: localhost:8848
+        server-addr: 47.115.91.98:8848
         namespace: c47a4ba5-6d20-4d89-9bc0-932887bc64c2
         ext-config:
           - data-id: third-party.yml

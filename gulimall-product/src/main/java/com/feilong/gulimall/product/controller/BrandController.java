@@ -1,9 +1,15 @@
 package com.feilong.gulimall.product.controller;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
+import com.feilong.gulimall.product.valid.AddGroup;
+import com.feilong.gulimall.product.valid.UpdateGroup;
+import com.feilong.gulimall.product.valid.UpdateStatusGroup;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +21,7 @@ import com.feilong.gulimall.product.service.BrandService;
 import com.feilong.common.utils.PageUtils;
 import com.feilong.common.utils.R;
 
+import javax.validation.Valid;
 
 
 /**
@@ -24,6 +31,7 @@ import com.feilong.common.utils.R;
  * @email xiaomingwang@gmail.com
  * @date 2020-11-13 12:45:42
  */
+@SuppressWarnings("ALL")
 @RestController
 @RequestMapping("product/brand")
 public class BrandController {
@@ -58,9 +66,8 @@ public class BrandController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("product:brand:save")
-    public R save(@RequestBody BrandEntity brand){
+    public R save(@Validated(AddGroup.class) @RequestBody BrandEntity brand){
 		brandService.save(brand);
-
         return R.ok();
     }
 
@@ -69,9 +76,20 @@ public class BrandController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("product:brand:update")
-    public R update(@RequestBody BrandEntity brand){
+    public R update(@Validated(UpdateGroup.class)@RequestBody BrandEntity brand){
 		brandService.updateById(brand);
+        return R.ok();
+    }
 
+    /**
+     * 修改状态
+     * @param brand
+     * @return
+     */
+    @RequestMapping("/update/status")
+    //@RequiresPermissions("product:brand:update")
+    public R updateStatus(@Validated(UpdateStatusGroup.class)@RequestBody BrandEntity brand){
+        brandService.updateById(brand);
         return R.ok();
     }
 
